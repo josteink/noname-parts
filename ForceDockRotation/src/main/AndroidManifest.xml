@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.kjonigsen.forcedockrotation"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="net.kjonigsen.forcedockrotation.SettingsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".PreferenceActivity"/>
+
+        <receiver android:name=".DockRotationReceiver"/>
+        <service android:name=".ForceDockRotationService"/>
+    </application>
+
+</manifest>
