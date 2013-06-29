@@ -1,10 +1,13 @@
 # incremental data. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
+1372525005000 256 dadf92e487e7028cf972d470f5cdfbd716390966 /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/menu/mainactivitymenu.xml
 1372519103000 7721 39b0f5a0570da92f471225402ad0ea6de30bf2be /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/drawable-hdpi/ic_launcher.png
 1372519104000 1439 00576f33022687c415a0cb8ebbd7651e8ef565ac /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/xml/pref_general.xml
+1372521794000 604 d3195f16393598252397015fa2df78a3e2c5b866 /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/layout/main_activity.xml
 1372519103000 12329 a8301606e15d4b6dccdd775cc273cfc51a552645 /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/drawable-xhdpi/ic_launcher.png
 1372519104000 381 b129b276e01126de5b3b753572ac67cbfc19454c /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/values-v14/styles.xml
+1372527848000 349 d592e621127a0c74276286fb3611b26f089aba27 /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/xml/preferences.xml
 1372519104000 951 df67da2be39a9c7f2e7010b025afa55e648f7528 /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/xml/pref_data_sync.xml
 1372519104000 1299 f3cd8d28bb1cf31dc153847e3428455b63110120 /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/xml/pref_notification.xml
 1372519104000 2029 508124b7687684ab256147d3c75f03c1edece16d /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/values/strings_activity_settings.xml
@@ -13,4 +16,4 @@
 1372519104000 324 aa1f5f1723de9aee2669dc44a26fbc0ce776d35f /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/values-v11/styles.xml
 1372519103000 3769 eec07752d40e268ed7f4a1730acc77ab1e40aeb0 /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/drawable-mdpi/ic_launcher.png
 1372519104000 690 87763c71a3457a2f951f0805bb559ebcb0252e62 /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/xml/pref_headers.xml
-1372519104000 82 21ed337a11e4002658a65cfff99c0c23703ef522 /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/values/strings.xml
+1372524637000 445 2df4a65f8ffda9dbcb75f9194837e0a915e7f1ca /home/jostein/AndroidStudioProjects/ForceDockRotationProject/ForceDockRotation/src/main/res/values/strings.xml

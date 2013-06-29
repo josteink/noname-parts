@@ -1,13 +1,14 @@
 package net.kjonigsen.forcedockrotation;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
-
-import java.lang.annotation.Annotation;
+import android.view.MenuItem;
 
 /**
  * Created by jostein on 29/06/13.
@@ -19,11 +20,10 @@ public class MainActivity extends Activity {
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
-        this.setContentView(R.layout.MainActivity);
+        this.setContentView(R.layout.main_activity);
 
         CheckInitialDockState task = new CheckInitialDockState();
-        task.execute(R.layout.MainActivity, savedInstanceState, null);
-
+        task.execute(this, savedInstanceState, null);
     }
 
     @Override
@@ -32,5 +32,32 @@ public class MainActivity extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.mainactivitymenu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.settingsmenuitem)
+        {
+            Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
+            startActivity(settingsIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    public class CheckInitialDockState extends AsyncTask
+    {
+        @Override
+        protected Object doInBackground(Object... objects) {
+
+
+            DeviceStatus status = DeviceStatus.fromSystem((MainActivity)objects[0]);
+            DockRotationReceiver.startStopService(MainActivity.this, status.IsDocked);
+
+            return null;
+        }
     }
 }
