@@ -23,7 +23,11 @@ public class ForceDockRotationService extends Service {
         orientationChanger = new LinearLayout(this);
 
         // voodoo
-        WindowManager.LayoutParams params = new WindowManager.LayoutParams(0x7d6, 0x0, 0x1);
+        int layoutFlags = WindowManager.LayoutParams.FIRST_SYSTEM_WINDOW
+                | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN
+                | WindowManager.LayoutParams.TYPE_APPLICATION;
+        WindowManager.LayoutParams params = new WindowManager.LayoutParams(layoutFlags, 0x0, 0x1);
+
 
         params.screenOrientation = 0x4;
 
