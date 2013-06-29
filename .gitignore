@@ -48,3 +48,7 @@ proguard_logs/
 *.war
 *.ear
 
+# other stuff
+build/*
+gradle/*
+*/build/*

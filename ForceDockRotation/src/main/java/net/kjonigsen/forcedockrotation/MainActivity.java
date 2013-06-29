@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
 
         if (item.getItemId() == R.id.settingsmenuitem)
         {
-            Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
             startActivity(settingsIntent);
             return true;
         }

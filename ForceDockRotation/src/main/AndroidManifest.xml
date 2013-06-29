@@ -17,8 +17,12 @@
             android:name="net.kjonigsen.forcedockrotation.SettingsActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".PreferenceActivity"/>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <receiver android:name=".DockRotationReceiver"/>
         <service android:name=".ForceDockRotationService"/>
