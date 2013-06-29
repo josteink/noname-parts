@@ -19,7 +19,7 @@ public class DockRotationReceiver extends BroadcastReceiver {
     }
 
     public static void startStopService(Context context, boolean isDocked) {
-        if (!isDocked || !getEnabled(context))
+        if (!getEnabled(context) || !isDocked)
         {
             return;
         }
