@@ -52,8 +52,6 @@ public class MainActivity extends Activity {
     {
         @Override
         protected Object doInBackground(Object... objects) {
-
-
             DeviceStatus status = DeviceStatus.fromSystem((MainActivity)objects[0]);
             DockRotationReceiver.startStopService(MainActivity.this, status.IsDocked);
 
