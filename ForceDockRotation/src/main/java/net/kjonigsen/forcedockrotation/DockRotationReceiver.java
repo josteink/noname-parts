@@ -20,13 +20,17 @@ public class DockRotationReceiver extends BroadcastReceiver {
     }
 
     public static void startStopService(Context context, boolean isDocked) {
-        if (!getEnabled(context) || !isDocked)
-        {
-            return;
-        }
-
+        boolean enabled = isDocked && getEnabled(context);
         Intent serviceIntent = new Intent(context, ForceDockRotationService.class);
-        context.startService(serviceIntent);
+
+        if (enabled)
+        {
+            context.startService(serviceIntent);
+        }
+        else
+        {
+            context.stopService(serviceIntent);
+        }
     }
 
     private static Boolean getEnabled(Context context)

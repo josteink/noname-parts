@@ -27,7 +27,7 @@ public class ForceDockRotationService extends Service {
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.RGBA_8888);
         params.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
 
-        WindowManager window = (WindowManager)getSystemService("window");
+        WindowManager window = getWindowManager();
         window.addView(orientationChanger,params);
 
         orientationChanger.setVisibility(0);
@@ -40,8 +40,14 @@ public class ForceDockRotationService extends Service {
             return;
         }
 
-        WindowManager window = (WindowManager)getSystemService("window");
+        WindowManager window = getWindowManager();
         window.removeView(orientationChanger);
         orientationChanger = null;
+    }
+
+    private WindowManager getWindowManager()
+    {
+        WindowManager window = (WindowManager)getSystemService("window");
+        return window;
     }
 }
