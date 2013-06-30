@@ -15,7 +15,8 @@ import static android.preference.PreferenceManager.*;
  */
 public class DockRotationReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
-
+        DeviceStatus status = DeviceStatus.fromIntent(intent, context);
+        startStopService(context, status.IsDocked);
     }
 
     public static void startStopService(Context context, boolean isDocked) {

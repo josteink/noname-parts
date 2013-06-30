@@ -2,6 +2,7 @@ package net.kjonigsen.forcedockrotation;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.IBinder;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -14,6 +15,8 @@ import java.beans.IndexedPropertyChangeEvent;
 public class ForceDockRotationService extends Service {
     LinearLayout orientationChanger;
 
+    private final static int FORCED_SCREEN_ORIENTATION = 0x4;
+
     public IBinder onBind(Intent intent) {
         return null;
     }
@@ -24,17 +27,16 @@ public class ForceDockRotationService extends Service {
 
         // voodoo
         int layoutFlags = WindowManager.LayoutParams.FIRST_SYSTEM_WINDOW
-                | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN
+                | WindowManager.LayoutParams.FLAGS_CHANGED
                 | WindowManager.LayoutParams.TYPE_APPLICATION;
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(layoutFlags, 0x0, 0x1);
 
+        params.screenOrientation = FORCED_SCREEN_ORIENTATION;
 
-        params.screenOrientation = 0x4;
-
-        WindowManager window = (WindowManager)getSystemService("window");
-        window.addView(orientationChanger,params);
-
-        orientationChanger.setVisibility(0);
+//        WindowManager window = (WindowManager)getSystemService("window");
+//        window.addView(orientationChanger,params);
+//
+//        orientationChanger.setVisibility(0);
     }
 
     @Override
