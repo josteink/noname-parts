@@ -4,6 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="17" />
@@ -24,7 +26,14 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".DockRotationReceiver"/>
+        <receiver android:name=".DockRotationReceiver">
+            <intent-filter>
+                <action android:name="android.app.action.ENTER_DESK_MODE" />
+                <action android:name="android.app.action.EXIT_DESK_MODE" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
         <service android:name=".ForceDockRotationService"/>
     </application>
 
