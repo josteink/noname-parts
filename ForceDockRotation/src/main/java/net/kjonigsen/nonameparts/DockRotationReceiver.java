@@ -1,14 +1,10 @@
-package net.kjonigsen.forcedockrotation;
+package net.kjonigsen.nonameparts;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-
-import java.util.prefs.Preferences;
-
-import static android.preference.PreferenceManager.*;
 
 /**
  * Created by jostein on 29/06/13.

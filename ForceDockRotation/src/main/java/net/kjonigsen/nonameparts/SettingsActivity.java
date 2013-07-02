@@ -1,4 +1,4 @@
-package net.kjonigsen.forcedockrotation;
+package net.kjonigsen.nonameparts;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

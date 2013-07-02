@@ -3,15 +3,15 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="net.kjonigsen.forcedockrotation.SettingsActivity$GeneralPreferenceFragment"
+        android:fragment="net.kjonigsen.nonameparts.SettingsActivity$GeneralPreferenceFragment"
         android:title="@string/pref_header_general" />
 
     <header
-        android:fragment="net.kjonigsen.forcedockrotation.SettingsActivity$NotificationPreferenceFragment"
+        android:fragment="net.kjonigsen.nonameparts.SettingsActivity$NotificationPreferenceFragment"
         android:title="@string/pref_header_notifications" />
 
     <header
-        android:fragment="net.kjonigsen.forcedockrotation.SettingsActivity$DataSyncPreferenceFragment"
+        android:fragment="net.kjonigsen.nonameparts.SettingsActivity$DataSyncPreferenceFragment"
         android:title="@string/pref_header_data_sync" />
 
 </preference-headers>

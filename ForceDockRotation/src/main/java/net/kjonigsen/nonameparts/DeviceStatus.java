@@ -1,13 +1,8 @@
-package net.kjonigsen.forcedockrotation;
+package net.kjonigsen.nonameparts;
 
-import android.app.UiModeManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.Configuration;
-import android.os.BatteryManager;
-
-import java.util.zip.DeflaterInputStream;
 
 /**
  * Created by jostein on 29/06/13.

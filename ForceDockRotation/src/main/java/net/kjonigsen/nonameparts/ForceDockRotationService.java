@@ -1,4 +1,4 @@
-package net.kjonigsen.forcedockrotation;
+package net.kjonigsen.nonameparts;
 
 import android.app.Service;
 import android.content.Intent;
@@ -7,8 +7,6 @@ import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-
-import java.beans.IndexedPropertyChangeEvent;
 
 /**
  * Created by jostein on 29/06/13.
