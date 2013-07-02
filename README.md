@@ -15,6 +15,7 @@ It may be useful for other similar devices.
 
 * Add ability to configure touch-pad.
 * Add ability to force-mount MicroSD-cardswhich vold is unable to handle (like exfat).
+* Add update-detection and download.
 
 ## License
 
