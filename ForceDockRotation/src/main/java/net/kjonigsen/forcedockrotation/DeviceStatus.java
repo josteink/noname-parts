@@ -3,7 +3,9 @@ package net.kjonigsen.forcedockrotation;
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
+import android.os.BatteryManager;
 
 import java.util.zip.DeflaterInputStream;
 
@@ -25,10 +27,17 @@ public class DeviceStatus {
 
     public static DeviceStatus fromSystem(android.content.Context context)
     {
-        UiModeManager manager = getUiModeManager(context);
-        int modeType = manager.getCurrentModeType();
-        boolean docked = (modeType == Configuration.UI_MODE_TYPE_DESK);
-        return new DeviceStatus(docked);
+//        UiModeManager manager = getUiModeManager(context);
+//        int modeType = manager.getCurrentModeType();
+//        boolean docked = (modeType == Configuration.UI_MODE_TYPE_DESK);
+
+        IntentFilter ifilter = new IntentFilter(Intent.ACTION_DOCK_EVENT);
+        Intent dockStatus = context.registerReceiver(null, ifilter);
+
+        int dockState = dockStatus.getIntExtra(Intent.EXTRA_DOCK_STATE, -1);
+        boolean isDocked = dockState != Intent.EXTRA_DOCK_STATE_UNDOCKED;
+
+        return new DeviceStatus(isDocked);
     }
 
     public static DeviceStatus fromIntent(Intent intent, Context context) {
