@@ -14,16 +14,16 @@ import java.util.zip.DeflaterInputStream;
  */
 public class DeviceStatus {
 
-    private final static String POWER_DISCONNECTED = "android.intent.action.ACTION_POWER_DISCONNECTED";
-    private final static String POWER_CONNECTED = "android.intent.action.ACTION_POWER_CONNECTED";
-
-
     public final boolean IsDocked;
 
     public DeviceStatus(boolean isDocked)
     {
         IsDocked = isDocked;
     }
+
+    /*
+     * static API
+     */
 
     public static DeviceStatus fromSystem(android.content.Context context)
     {
@@ -37,39 +37,6 @@ public class DeviceStatus {
     }
 
     public static DeviceStatus fromIntent(Intent intent, Context context) {
-        Context appContext = context.getApplicationContext();
-        String action = intent.getAction();
-
-        Boolean enterDeskMode = UiModeManager.ACTION_ENTER_DESK_MODE.equals(action);
-        if (enterDeskMode)
-        {
-            return new DeviceStatus(true);
-        }
-
-        Boolean exitDeskMode = UiModeManager.ACTION_EXIT_DESK_MODE.equals(action);
-        if (exitDeskMode)
-        {
-            return new DeviceStatus(false);
-        }
-
-        Boolean powerConnected = POWER_CONNECTED.equals(action);
-        if (powerConnected)
-        {
-            return new DeviceStatus(true);
-        }
-
-        Boolean powerDisconnected = POWER_DISCONNECTED.equals(action);
-        if (powerDisconnected)
-        {
-            return new DeviceStatus(false);
-        }
-
         return fromSystem(context);
-    }
-
-    private static UiModeManager getUiModeManager(android.content.Context context)
-    {
-        UiModeManager manager = (UiModeManager)context.getSystemService("uimode");
-        return manager;
     }
 }
