@@ -27,10 +27,6 @@ public class DeviceStatus {
 
     public static DeviceStatus fromSystem(android.content.Context context)
     {
-//        UiModeManager manager = getUiModeManager(context);
-//        int modeType = manager.getCurrentModeType();
-//        boolean docked = (modeType == Configuration.UI_MODE_TYPE_DESK);
-
         IntentFilter ifilter = new IntentFilter(Intent.ACTION_DOCK_EVENT);
         Intent dockStatus = context.registerReceiver(null, ifilter);
 
