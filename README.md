@@ -14,13 +14,13 @@ It may be useful for other similar devices.
 ## TODO
 
 * Add ability to configure touch-pad.
-* Add ability to force-mount MicroSD-cardswhich vold is unable to handle (like exfat).
+* Add ability to force-mount MicroSD-cards which vold is unable to handle (like exfat).
 * Add update-detection and download. Should check for releases on pre-made index on server.
 
 ### Update-detection
 
 Should be able to automatically filter on device, build-type (from CM-version) and have a
-preference for wheter to check for updates, and wheter tabletUI should be required before
+preference for whether to check for updates, and whether tabletUI should be required before
 an new update is interesting.
 
 ## License
