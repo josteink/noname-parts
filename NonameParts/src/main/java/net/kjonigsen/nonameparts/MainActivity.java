@@ -15,14 +15,18 @@ import android.view.MenuItem;
 
 public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        try {
+            super.onCreate(savedInstanceState);
 
-        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+            PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
-        this.setContentView(R.layout.main_activity);
+            this.setContentView(R.layout.main_activity);
 
-        CheckInitialDockState task = new CheckInitialDockState();
-        task.execute(this, savedInstanceState, null);
+            CheckInitialDockState task = new CheckInitialDockState();
+            task.execute(this, savedInstanceState, null);
+        }
+        catch (Exception ex) {
+        }
     }
 
     @Override
@@ -51,8 +55,12 @@ public class MainActivity extends Activity {
     {
         @Override
         protected Object doInBackground(Object... objects) {
-            DeviceStatus status = DeviceStatus.fromSystem(MainActivity.this);
-            DockRotationReceiver.startStopService(MainActivity.this, status.IsDocked);
+            try {
+                DeviceStatus status = DeviceStatus.fromSystem(MainActivity.this);
+                DockRotationReceiver.startStopService(MainActivity.this, status.IsDocked);
+            }
+            catch (Exception ex) {
+            }
 
             return null;
         }

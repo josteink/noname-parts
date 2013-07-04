@@ -22,11 +22,16 @@ public class DeviceStatus {
 
     public static DeviceStatus fromSystem(android.content.Context context)
     {
+        boolean isDocked = false;
+
         IntentFilter ifilter = new IntentFilter(Intent.ACTION_DOCK_EVENT);
         Intent dockStatus = context.registerReceiver(null, ifilter);
 
-        int dockState = dockStatus.getIntExtra(Intent.EXTRA_DOCK_STATE, -1);
-        boolean isDocked = dockState != Intent.EXTRA_DOCK_STATE_UNDOCKED;
+        if (dockStatus != null)
+        {
+            int dockState = dockStatus.getIntExtra(Intent.EXTRA_DOCK_STATE, -1);
+            isDocked = dockState != Intent.EXTRA_DOCK_STATE_UNDOCKED;
+        }
 
         return new DeviceStatus(isDocked);
     }
