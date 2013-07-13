@@ -13,6 +13,7 @@ It may be useful for other similar devices.
 
 ## TODO
 
+* Add ability to chose dock keyboard layout, since not all layouts shows up in Android physical keyboard.
 * Add ability to configure touch-pad.
 * Add ability to force-mount MicroSD-cards which vold is unable to handle (like exfat).
 * Add update-detection and download. Should check for releases on pre-made index on server.
