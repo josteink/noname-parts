@@ -17,6 +17,7 @@ It may be useful for other similar devices.
 * Add ability to configure touch-pad.
 * Add ability to force-mount MicroSD-cards which vold is unable to handle (like exfat).
 * Add update-detection and download. Should check for releases on pre-made index on server.
+* Add option to auto-expand desktop when docked.
 
 ### Update-detection
 
